@@ -1,1 +1,1 @@
-# Starter Project for Spring-Boot-JPA Classroom Exercise
+# Complete Solution for the Spring-Boot-JPA Classroom Exercise
