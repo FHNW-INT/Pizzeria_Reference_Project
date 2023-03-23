@@ -28,7 +28,8 @@
 			"extensions": [
 				"vscjava.vscode-java-pack",
 				"vmware.vscode-boot-dev-pack",
-				"vmware.vscode-spring-boot"
+				"vmware.vscode-spring-boot",
+				"github.copilot"
 			]
 		}
 	}
