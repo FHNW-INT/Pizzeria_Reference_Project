@@ -21,7 +21,7 @@ public class MenuController {
     private MenuService menuService;
 
     @GetMapping(path="/pizza/{id}", produces = "application/json")
-    public ResponseEntity getPizza(@PathVariable("id") Long id) {
+    public ResponseEntity getPizza(@PathVariable Long id) {
         try{
             Pizza pizza = menuService.findPizzaById(id);
             return ResponseEntity.ok(pizza);
@@ -52,7 +52,7 @@ public class MenuController {
     }
 
     @GetMapping(path="", produces = "application/json")
-    public Menu getMenu(@RequestParam(value="location") String location) {
+    public Menu getMenu(@RequestParam String location) {
 
         return menuService.getMenuByLocation(location);
     }
