@@ -103,6 +103,7 @@ Then, the following further dependencies have been added to the project `pom.xml
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 </dependency>
+```
 
 ### Frontend Technology
 > 🚧: Describe your views and what APIs is used on which view.
