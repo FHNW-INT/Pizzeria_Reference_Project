@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -27,7 +26,7 @@ public class MenuController {
             return ResponseEntity.ok(pizza);
         }
         catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No pizza found with given id");
         }
     }
 
@@ -44,17 +43,39 @@ public class MenuController {
             pizza = menuService.addPizza(pizza);
             
         } catch (Exception e) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Pizza already exists with given name");
+        }
+        return ResponseEntity.ok(pizza);
+        
+    }
+
+    @PutMapping(path="/pizza/{id}", consumes="application/json", produces = "application/json")
+    public ResponseEntity updatePizza(@PathVariable Long id, @RequestBody Pizza pizza) {
+        try{
+            pizza = menuService.updatePizza(id, pizza);
+            
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("No pizza found with given id");
 
         }
         return ResponseEntity.ok(pizza);
         
     }
 
-    @GetMapping(path="", produces = "application/json")
-    public Menu getMenu(@RequestParam String location) {
+    @DeleteMapping(path="/pizza/{id}")
+    public ResponseEntity<String> deletePizza(@PathVariable Long id) {
+        try{
+            menuService.deletePizza(id);
+            return ResponseEntity.ok("Pizza with id " + id + " deleted");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pizza not found");
+        }
+    }
 
-        return menuService.getMenuByLocation(location);
+    @GetMapping(path="", produces = "application/json")
+    public ResponseEntity<Menu> getMenu(@RequestParam String location) {
+        Menu menu = menuService.getMenuByLocation(location);
+        return ResponseEntity.ok(menu);      
     }
     
 }

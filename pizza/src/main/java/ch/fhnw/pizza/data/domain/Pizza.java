@@ -1,5 +1,6 @@
 package ch.fhnw.pizza.data.domain;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ public class Pizza {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Hidden //This annotation hides the id field from the swagger documentation
     @Column(name = "id", nullable = false)
     private Long id;
 
