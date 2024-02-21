@@ -22,12 +22,7 @@ public class PizzaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PizzaApplication.class, args);
 	}
-
-	@GetMapping(value="/")
-    public String getWelcomeString() {
-        
-        return "Pizza Takeaway Service, welcome!";
-    } 
+	
 
 	// Use this method to initialize placeholder data without using Postman
 	// If you are persisting data in a file (see application.properties), initializing data that already exists will cause an error during starting the application
