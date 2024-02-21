@@ -128,12 +128,12 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 
 > 🚧: This is a shortened description for example purposes. A complete tutorial will be provided in a dedicated lecture.
 
-1- Clone PizzaRP in a new repository.
-2- Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
-3- Run the PizzaRP main available at PizzaApplication.java on your own codespace.
-4- Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
-5- Create an own Budibase app, you can export/import the existing Pizzerua app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
-6- Update the pizzeria URL in the datasource and publish your app.
+1. Clone PizzaRP in a new repository.
+2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
+3. Run the PizzaRP main available at PizzaApplication.java on your own codespace.
+4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
+5. Create an own Budibase app, you can export/import the existing Pizzerua app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
+6. Update the pizzeria URL in the datasource and publish your app.
 
 ## Project Management
 > 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
