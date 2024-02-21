@@ -16,8 +16,12 @@ public class MenuService {
     private PizzaRepository pizzaRepository;
 
     public Pizza findPizzaById(Long id) {
-        Pizza pizza = pizzaRepository.findById(id).get();
-        return pizza;
+        try {
+            Pizza pizza = pizzaRepository.findById(id).get();
+            return pizza;
+        } catch (Exception e) {
+            throw new RuntimeException("Pizza with id " + id + " not found");
+        }
     }
 
     public List<Pizza> getAllPizzas() {
@@ -34,9 +38,28 @@ public class MenuService {
         throw new Exception("Invalid pizza name ");
     }
 
+    public Pizza updatePizza(Long id, Pizza pizza) throws Exception {
+        Pizza pizzaToUpdate = pizzaRepository.findById(id).get();
+        if(pizzaToUpdate != null) {
+            if(pizza.getPizzaName() != null)
+                pizzaToUpdate.setPizzaName(pizza.getPizzaName());
+            if(pizza.getPizzaToppings() != null)
+                pizzaToUpdate.setPizzaToppings(pizza.getPizzaToppings());
+            return pizzaRepository.save(pizzaToUpdate);
+        }
+        throw new Exception("Pizza with id " + id + " does not exist");
+    }
+
+    public void deletePizza(Long id) throws Exception {
+        if(pizzaRepository.existsById(id)) {
+            pizzaRepository.deleteById(id);
+        } else
+            throw new Exception("Pizza with id " + id + " does not exist");
+    }
+
     //Business Logic to get current offer according to the location of the user requesting the menu
     private String getCurrentOffer(String location) {
-        String currentOffer = "No special offer";
+        String currentOffer = "No special offer for your location. Do check back again.";
         if("Basel".equalsIgnoreCase(location))
             currentOffer = "10% off on all large pizzas!!!";
         else if("Brugg".equalsIgnoreCase(location))
@@ -53,5 +76,5 @@ public class MenuService {
         return menu;
     }
 
-    
+        
 }
