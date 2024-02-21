@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.fhnw.pizza.business.service.MenuService;
 import ch.fhnw.pizza.data.domain.Pizza;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
 @SpringBootApplication
 @RestController
+@Hidden // Hide this controller from the Swagger UI
 public class PizzaApplication {
 
 	@Autowired
