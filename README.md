@@ -33,11 +33,12 @@ PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight de
 
 ### User Stories
 1.	As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
-2.	As an Admin, I want to see a consistent visual appearance to navigate easily, and it should looks consistent.
+2.	As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
 3.	As an Admin, I want to use list views to explore and read my business data.
 4.	As an Admin, I want to use edit and create views to maintain my business data.
-5.  As an Admin, I want to log-in so that I can authenticate myself.
-6.  As an User, I want to access public pages.
+5.  	As an Admin, I want to log-in so that I can authenticate myself.
+6.  	As a User, I want to use list views so that I can access public pages.
+7.  	(Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
 
 ### Use Case
 
@@ -132,7 +133,7 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
 3. Run the PizzaRP main available at PizzaApplication.java on your own codespace.
 4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
-5. Create an own Budibase app, you can export/import the existing Pizzerua app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
+5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
 6. Update the pizzeria URL in the datasource and publish your app.
 
 ## Project Management
