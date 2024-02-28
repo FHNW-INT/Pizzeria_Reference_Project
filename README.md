@@ -32,13 +32,13 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight demonstration tool allowing the pizzaiolo (Role: Admin) to manage its pizza catalog. 
 
 ### User Stories
-1.	As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
-2.	As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
-3.	As an Admin, I want to use list views to explore and read my business data.
-4.	As an Admin, I want to use edit and create views to maintain my business data.
-5.  	As an Admin, I want to log-in so that I can authenticate myself.
-6.  	As a User, I want to use list views so that I can access public pages.
-7.  	(Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
+1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
+2. As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
+3. As an Admin, I want to use list views to explore and read my business data.
+4. As an Admin, I want to use edit and create views to maintain my business data.
+5. As an Admin, I want to log-in so that I can authenticate myself.
+6. As a User, I want to use list views so that I can access public pages.
+7. (Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
 
 ### Use Case
 
