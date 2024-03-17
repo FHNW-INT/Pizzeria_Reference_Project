@@ -1,4 +1,4 @@
-# DORIS Project
+# xyz Project
 
 This is a minimal Pizzeria Reference Project (PizzaRP) as a template for students. 
 
