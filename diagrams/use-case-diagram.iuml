@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+actor Admin as a
+
+actor User as u
+
+package FlyApp {
+  usecase "CRUD Flights" as UC1
+  usecase "Search Flights" as UC2
+}
+a --> UC1
+u --> UC2 
+@enduml

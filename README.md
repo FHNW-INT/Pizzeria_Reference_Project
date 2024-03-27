@@ -48,6 +48,9 @@ PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight de
 
 ### Use Case
 
+![use-case-diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/francodgstn/fhnw-fly-around/data-model-design/diagrams/use-case-diagram.iuml)
+
+
 ![](images/use-case.png)
 
 - UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
