@@ -7,20 +7,26 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 > 🚧: **This is a template project**: Make sure you adapt this documentation and the source code in this project according to your needs and use case. Comments are provided with "🚧:". Do not leave these comments in your final submission!
 
 #### Contents:
-- [Analysis](#analysis)
-  - [Scenario](#scenario)
-  - [User Stories](#user-stories)
-  - [Use Case](#use-case)
-- [Design](#design)
-  - [Prototype Design](#prototype-design)
-  - [Domain Design](#domain-design)
-  - [Business Logic](#business-logic)
-- [Implementation](#implementation)
-  - [Backend Technology](#backend-technology)
-  - [Frontend Technology](#frontend-technology)
-- [Project Management](#project-management)
-  - [Roles](#roles)
-  - [Milestones](#milestones)
+- [Pizzeria Reference Project (PizzaRP)](#pizzeria-reference-project-pizzarp)
+      - [Contents:](#contents)
+  - [Analysis](#analysis)
+    - [Scenario](#scenario)
+    - [User Stories](#user-stories)
+    - [Use Case](#use-case)
+  - [Design](#design)
+    - [Wireframe](#wireframe)
+    - [Prototype](#prototype)
+    - [Domain Design](#domain-design)
+    - [Business Logic](#business-logic)
+  - [Implementation](#implementation)
+    - [Backend Technology](#backend-technology)
+    - [Frontend Technology](#frontend-technology)
+  - [Execution](#execution)
+  - [Project Management](#project-management)
+    - [Roles](#roles)
+    - [Milestones](#milestones)
+      - [Maintainer](#maintainer)
+      - [License](#license)
 
 ## Analysis
 > 🚧: You can reuse the analysis (you made) from other projects (e.g., requirement engineering), but it must be submitted according to the following template. 
@@ -66,6 +72,17 @@ Starting from the home page, we can visit different pages. Available public page
 The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
 
 ![](images/domain-model.png)
+
+```mermaid
+classDiagram
+    class Flight{
+        +String flightNumber
+        +String departureAirport
+        +String destinationAirport
+        +String departureDateLt
+    }
+   
+```
 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
