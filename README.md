@@ -6,7 +6,10 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 
 > 🚧: **This is a template project**: Make sure you adapt this documentation and the source code in this project according to your needs and use case. Comments are provided with "🚧:". Do not leave these comments in your final submission!
 
-#### Contents:
+## Contents
+
+> 🚧: Todo
+
 - [Pizzeria Reference Project (PizzaRP)](#pizzeria-reference-project-pizzarp)
       - [Contents:](#contents)
   - [Analysis](#analysis)
@@ -29,11 +32,12 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
       - [License](#license)
 
 ## Analysis
+
 > 🚧: You can reuse the analysis (you made) from other projects (e.g., requirement engineering), but it must be submitted according to the following template. 
 
-
-
 ### Scenario
+
+> 🚧: Todo
 
 PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight demonstration tool allowing the pizzaiolo (Role: Admin) to manage its pizza catalog. 
 
@@ -48,46 +52,46 @@ PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight de
 
 ### Use Case
 
-![use-case-diagram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/francodgstn/fhnw-fly-around/data-model-design/diagrams/use-case-diagram.iuml)
+> 🚧: In progress
 
+![use-case-diagram](https:////www.plantuml.com/plantuml/png/POt1geCm44NtynM3UnTFNRbuw5FU1xJu0KESQZ0caamMfVJVsq05gRlBlOTpco3a9Qu63Dy4nQ7NqomuQizAjBD0Ifp7TborHGf8y6c6m3uL4M0ZjT34-6_kxRRX0n1ZO4M1CUikG_yUaZHaYH-wdzFUSn1jAVtjK764hanUpL-QygJvSsxHTjg12fvGKurv_fjU3xc0EkwvFEGA6hPZNCqB)
 
-![](images/use-case.png)
-
-- UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
-- UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
-- UC-3 [Edit a Pizza]: Admin can create, update, and delete pizzas from the menu.
-- UC-4 [Show Current Location Offer]: User can retrieve special menu by location
+- UC-1 [CRUD Flights]: Admin can create, read, update and deletethe flights.
+- UC-2 ...
+- UC-3 ...
+- UC-4 ...
 
 ## Design
+
+> 🚧: Todo
 > 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
 
 ### Wireframe
+
+> 🚧: Todo
 > 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools. 
 
 Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
 
 ### Prototype
+
+> 🚧: Todo
 > 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
 
 ### Domain Design
+
+> 🚧: In progress
 > 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
 
 The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
 
 ![](images/domain-model.png)
 
-```mermaid
-classDiagram
-    class Flight{
-        +String flightNumber
-        +String departureAirport
-        +String destinationAirport
-        +String departureDateLt
-    }
-   
-```
+![class-diagram](https://www.plantuml.com/plantuml/png/jP7DJiD038JlUOfz3axzgP0geO84DyJ1tRfRq_sfl6uv8DwTTQAGRf8hn_riJsOcYop0SWs-QQo7dCsZ9tSIyzqOOu6PaDVfWER1l0fJT0KVsutTDUoH2zz6GOTS1WUyg1RZalYIMEwFLEe6VZePhjueu9EEDY3jGy-8BSDHrk1z9XU7mv-cTxpiTdhFeyN2GWdW1_2lHYk3lJ-Lwkn525MN10BZVib2KZQNTODPA89GYisSde3BV-_tZywOVhsYWzugfNDXwitMDhg_N8jToWb6XwpuUV-9LXJlmJbmM35xGdlUHctehgYXb9TUggtbI9nbDyhYOSem0FcPZbUT1HKR1p5Vg4agbHl6IICBZ8ThyBy0)
 
-### Business Logic 
+### Business Logic
+
+> 🚧: Todo
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
 
 Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
@@ -103,9 +107,13 @@ Based on the UC-4, there will be two offers and a standard offer. Given a locati
 **Method:** `GET`
 
 ## Implementation
+
+> 🚧: Todo
 > 🚧: Briefly describe your technology stack, which apps were used and for what.
 
 ### Backend Technology
+
+> 🚧: Todo
 > 🚧: It is suggested to clone this repository, but you are free to start from fresh with a Spring Initializr. If so, describe if there are any changes to the PizzaRP e.g., different dependencies, versions & etc... Please, also describe how your database is set up. If you want a persistent or in-memory H2 database check [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/resources/application.properties). If you have placeholder data to initialize at the app, you may use a variation of the method **initPlaceholderData()** available at [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/java/ch/fhnw/pizza/PizzaApplication.java).
 
 This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
@@ -120,29 +128,35 @@ To bootstrap the application, the [Spring Initializr](https://start.spring.io/) 
 Then, the following further dependencies have been added to the project `pom.xml`:
 
 - DB:
-```XML
-<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-</dependency>
-```
+
+  ```XML
+  <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+  </dependency>
+  ```
 
 - SWAGGER:
-```XML
+
+  ```XML
    <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
       <version>2.3.0</version>
    </dependency>
-```
+  ```
 
 ### Frontend Technology
+
+> 🚧: Todo
 > 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment(https://inttech.budibase.app/), please write to Devid on MS teams.
 
 This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/pizzeria. 
 
 ## Execution
+
+> 🚧: Todo
 > 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
 
 The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
@@ -157,13 +171,21 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 6. Update the pizzeria URL in the datasource and publish your app.
 
 ## Project Management
+
+> 🚧: Todo
 > 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
 
 ### Roles
+
+> 🚧: Todo
+
 - Back-end developer: Charuta Pande 
 - Front-end developer: Devid Montecchiari
 
 ### Milestones
+
+> 🚧: Todo
+
 1. **Analysis**: Scenario ideation, use case analysis and user story writing.
 2. **Prototype Design**: Creation of wireframe and prototype.
 3. **Domain Design**: Definition of domain model.
@@ -172,10 +194,15 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 6. **Security and Frontend Implementation**: Integration of security framework and frontend realisation.
 7. (optional) **Deployment**: Deployment of Web application on cloud infrastructure.
 
+### Maintainer
 
-#### Maintainer
+> 🚧: Todo
+
 - Charuta Pande
 - Devid Montecchiari
 
-#### License
+### License
+
+> 🚧: Todo
+
 - [Apache License, Version 2.0](blob/master/LICENSE)
