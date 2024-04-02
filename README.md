@@ -1,6 +1,6 @@
-# Pizzeria Reference Project (PizzaRP)
+# Fly Around
 
-This is a minimal Pizzeria Reference Project (PizzaRP) as a template for students. 
+Fly Around project - Internet Technology 2024
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -37,9 +37,12 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 
 ### Scenario
 
-> 🚧: Todo
+> 🔍: To review
 
-PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight demonstration tool allowing the pizzaiolo (Role: Admin) to manage its pizza catalog. 
+**Fly Around** is a small PoC project for the Internet Technology course at FHNW.
+The project is about a simple web app to search for flights to cool destinations and create basic bookings.
+
+The airline industry domain is wide, to keep the project simple we decided to limit the project scope to a minimal set of admin and user features which include for example: managing the flight schedule, searching flight by destination or interests, creating single passenger booking.
 
 ### User Stories
 1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
