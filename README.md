@@ -80,14 +80,16 @@ Starting from the home page, we can visit different pages. Available public page
 
 ### Domain Design
 
-> 🚧: In progress
-> 🚧: Provide a picture and describe your domain model; you may use Entity-Relationship Model or UML class diagram. Both can be created in Visual Paradigm - we have an academic license for it.
+> 🔍: To review
 
-The `ch.fhnw.pizza.data.domain` package contains the following domain objects / entities including getters and setters:
+The `ch.fhnw.flyaround.data.domain` package contains the following domain objects / entities including getters and setters:
 
-![](images/domain-model.png)
+![class-diagram](https://www.plantuml.com/plantuml/png/XL9DQnmn3BtxLuWz5XBQwr2Mj0s5XH8AxH_GUZmJ4NyCihQN9V-zjXclFTEFtEIdPqdlIGzHaENYhD8MOuIlbkPdWQi2c4fu6c607yBaPqYWHcOo_2MCveRVk4yNTpQSy9CNCnjEYS0qaq_G9-8bi2HeD578er3OuqiUXSrFShdu8qe9Koet_ONsBmbYpJX9BhI6wbMfLKo5uDgelQ2Ynzf8i-ynbyJP7eW69NQoNbk3Cdojd-AzNnxTnYX2mRrvf35iiIRXiPcbhblpUY7xHeMecPPCx671EIlvHb4-nW8Us-otpAhhs0toEOINnCvIpoKwZQsiVZRwvUJJOhRxMT9Fu-To4zzhhDPh6TPZQqqQ9xTflxTA9-8eJpkv5l_4Z4EoMrFhmWuV3d1t1uVtz_Vl3lNe1vWuE3Y-nPAGEEMrfrIJ1ZYdo8mm1OOZgARhV_oOodRxhgJG-7Mm0SXhUnbD_bAl_5_ZXiKmIg6g1-F7YxE_0G00)
 
-![class-diagram](https://www.plantuml.com/plantuml/png/jP7DJiD038JlUOfz3axzgP0geO84DyJ1tRfRq_sfl6uv8DwTTQAGRf8hn_riJsOcYop0SWs-QQo7dCsZ9tSIyzqOOu6PaDVfWER1l0fJT0KVsutTDUoH2zz6GOTS1WUyg1RZalYIMEwFLEe6VZePhjueu9EEDY3jGy-8BSDHrk1z9XU7mv-cTxpiTdhFeyN2GWdW1_2lHYk3lJ-Lwkn525MN10BZVib2KZQNTODPA89GYisSde3BV-_tZywOVhsYWzugfNDXwitMDhg_N8jToWb6XwpuUV-9LXJlmJbmM35xGdlUHctehgYXb9TUggtbI9nbDyhYOSem0FcPZbUT1HKR1p5Vg4agbHl6IICBZ8ThyBy0)
+Remarks:
+
+- To reduce the complexity we assumend that a booking only contains 1 passenger and 1 flight.
+- We added a `Destination` class which serves as aggregator of airports and will help us in searching and displaying flights. 
 
 ### Business Logic
 
