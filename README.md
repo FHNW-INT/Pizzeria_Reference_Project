@@ -50,16 +50,19 @@ User:
 11. As a User I want to like notes so other can see that the work is good 
 12. As a User I want to dislike notes so others can the the notes arent to my liking  
 13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
-14. As a User, I want to filter notes by module, date, or popularity, so I can easily find the most relevant or high-quality notes. 
+14. As a User, I want to filter notes by module, date, or popularity, so I can easily find the most relevant or high-quality notes.
+
 Admin: 
-15. As an Admin, I want to view user activity and engagement metrics, so I can understand how users interact with the platform and improve it. 
-16. As an Admin, I want to delete an account. 
-17. As an Admin, I want to delete comments. 
-18. As an Admin, I want to delete a post. 
+
+16. As an Admin, I want to view user activity and engagement metrics, so I can understand how users interact with the platform and improve it. 
+17. As an Admin, I want to delete an account. 
+18. As an Admin, I want to delete comments. 
+19. As an Admin, I want to delete a post. 
 
 ### Use Case
 
 ![](images/use-case.png)
+
 
 - UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
 - UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
