@@ -1,6 +1,10 @@
-# xyz Project
+# Lecture Note Sharing Hub Project
 
-This is a minimal Pizzeria Reference Project (PizzaRP) as a template for students. 
+The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
+ 
+It features a comprehensive filtering system that allows students to sort notes by various criteria including module, location, and lecturer.  
+ 
+Users can upload their notes, manage their content, and easily navigate the platform to access the information they need, tailored to their educational requirements. The app supports secure user authentication for students and admins, ensuring a safe exchange of information.
 
 [![License](https://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
@@ -29,16 +33,29 @@ This is a minimal Pizzeria Reference Project (PizzaRP) as a template for student
 
 ### Scenario
 
-PizzaRP (Pizzeria Reference Project) is the smallest possible and lightweight demonstration tool allowing the pizzaiolo (Role: Admin) to manage its pizza catalog. 
+The Lecture Note Sharing Hub is a web application designed for the FHNW students to conveniently find and share lecture notes.  
 
 ### User Stories
-1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
-2. As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
-3. As an Admin, I want to use list views to explore and read my business data.
-4. As an Admin, I want to use edit and create views to maintain my business data.
-5. As an Admin, I want to log-in so that I can authenticate myself.
-6. As a User, I want to use list views so that I can access public pages.
-7. (Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
+User: 
+1. As a User I want to have a website that is easily accessible  
+2. As a User I want to have a website that is mobile friendly. 
+3. As a User I want to I want to have a user account so I can authenticate myself. 
+4. As a User, I want to customize my profile, including a profile picture and bio, so I can share more about myself with others 
+5. As a User I want to delete my user account 
+6. As a User I want to have the oppurtunity to change my password or E-Mail  
+7. As a User I want to upload my notes for a specific module.  
+8. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
+9. As a User I want to download notes that are necessary for my specific module. 
+10. As a User I want to share my thoughts on these notes by leaving a comment. 
+11. As a User I want to like notes so other can see that the work is good 
+12. As a User I want to dislike notes so others can the the notes arent to my liking  
+13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
+14. As a User, I want to filter notes by module, date, or popularity, so I can easily find the most relevant or high-quality notes. 
+Admin: 
+15. As an Admin, I want to view user activity and engagement metrics, so I can understand how users interact with the platform and improve it. 
+16. As an Admin, I want to delete an account. 
+17. As an Admin, I want to delete comments. 
+18. As an Admin, I want to delete a post. 
 
 ### Use Case
 
