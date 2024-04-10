@@ -61,7 +61,7 @@ Admin:
 
 ### Use Case
 
-![](images/use-case.png)
+![](images/Relational Model.png)
 
 
 - UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
