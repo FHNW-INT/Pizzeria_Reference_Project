@@ -1,4 +1,4 @@
-package ch.fhnw.pizza.security;
+package ch.noteshub.fhnw.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

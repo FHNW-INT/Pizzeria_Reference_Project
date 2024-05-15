@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package ch.noteshub.fhnw.data.repository;
 
-import com.example.demo.domain.Degree;
+import ch.noteshub.fhnw.data.domain.Degree;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

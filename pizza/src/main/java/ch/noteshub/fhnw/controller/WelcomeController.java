@@ -1,4 +1,4 @@
-package ch.fhnw.pizza.controller;
+package ch.noteshub.fhnw.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,7 @@ public class WelcomeController {
     @GetMapping(value="/")
     public String getWelcomeString() {
         
-        return "Hello, welcome to our Pizzeria!";
+        return "Hello, welcome to our noteshub application!";
     }
 
     @GetMapping(value="/user")

@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
 

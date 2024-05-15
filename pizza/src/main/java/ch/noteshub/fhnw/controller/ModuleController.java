@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package ch.noteshub.fhnw.controller;
 
-import com.example.demo.domain.Module;
-import com.example.demo.repository.ModuleRepository;
+import ch.noteshub.fhnw.data.domain.Module;
+import ch.noteshub.fhnw.data.repository.ModuleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
