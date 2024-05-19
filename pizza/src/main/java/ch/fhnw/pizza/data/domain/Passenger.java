@@ -1,6 +1,5 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.util.Date;
 import java.util.List;
 
 import io.swagger.v3.oas.annotations.Hidden;

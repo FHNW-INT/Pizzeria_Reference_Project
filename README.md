@@ -25,6 +25,7 @@ Members:
     - [Wireframe](#wireframe)
     - [Prototype](#prototype)
     - [Domain Design](#domain-design)
+    - [Backend Architecture](#backend-architecture)
     - [Business Logic](#business-logic)
   - [Implementation](#implementation)
     - [Backend Technology](#backend-technology)
@@ -118,6 +119,14 @@ Remarks:
 
 - To reduce the complexity we assumend that a booking only contains 1 passenger and 1 flight.
 - We added a `Destination` class which serves as aggregator of airports and will help us in searching and displaying flights. 
+
+### Backend Architecture
+
+The following digram shows the high level architecture of the backend components.
+
+![architecture diagram](https://www.plantuml.com/plantuml/png/TP11Jm9138NlyoiQJdhW3tWmBE0cdZIkD_KmsIqmSRQTT0gH6Fwxb04NY1xdVQ-lhpF9waNNVNJvCr3oudjekKzCIDheDY88jkff6T6v1SSE1KOlc3W7PTcEuDi1lDKnB5Swo1_WCzJsDbe5IIpNk3hXEMODv3KmNLdc1yjkMDoWR4AB5rkRTeNTEkAHbTNDfZN7b7b_rl8SJGtjt90vOrBX657-Z1rmIPwfnBFeApmr39OVI54MliNzTpqqhr0zF-PtkZcEtOuExYg5_uobHJxLA0Er3RZXbs0ylY_7NchbIcV4diVM9XPwUBfIrWGh0dU0NuapklfNhozqHwm8Ohs05oVuH74BLTS7SXEaRjt77m00)
+
+
 
 ### Business Logic
 

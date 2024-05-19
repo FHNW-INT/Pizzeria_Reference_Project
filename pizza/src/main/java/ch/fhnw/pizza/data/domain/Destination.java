@@ -1,13 +1,11 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.util.Date;
 import java.util.List;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -37,8 +35,8 @@ public class Destination {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "airport", 
-      joinColumns = @JoinColumn(name = "id", referencedColumnName = "id"), 
-      inverseJoinColumns = @JoinColumn(name = "id", 
+      joinColumns = @JoinColumn(name = "destination_fk", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "airport_fk", 
       referencedColumnName = "id"))
       private List<Airport> airports;    
 

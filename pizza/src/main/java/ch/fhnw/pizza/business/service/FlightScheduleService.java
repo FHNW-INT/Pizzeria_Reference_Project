@@ -7,13 +7,24 @@ import org.springframework.stereotype.Service;
 
 
 import ch.fhnw.pizza.data.domain.Flight;
+import ch.fhnw.pizza.data.repository.AirportRepository;
+import ch.fhnw.pizza.data.repository.DestinationRepository;
 import ch.fhnw.pizza.data.repository.FlightRepository;
 
 @Service
-public class BookingService {
+public class FlightScheduleService {
 
     @Autowired
     private FlightRepository flightRepository;
+    
+    @Autowired
+    private DestinationRepository destinationRepository;
+
+    @Autowired
+    private AirportRepository airportRepository;
+
+
+    
 
     public Flight findFlightById(Long id) {
         try {
@@ -60,23 +71,4 @@ public class BookingService {
         }
     }
 
-    // // Business Logic to get current offer according to the location of the user requesting the menu
-    // private String getCurrentOffer(String location) {
-    //     String currentOffer = "No special offer for your location. Do check back again.";
-    //     if ("Basel".equalsIgnoreCase(location)) {
-    //         currentOffer = "10% off on all flights!!!";
-    //     } else if ("Brugg".equalsIgnoreCase(location)) {
-    //         currentOffer = "Two for the price of One on all flights!!!";
-    //     }
-    //     return currentOffer;
-    // }
-
-    // public Menu getMenuByLocation(String location) {
-    //     String currentOffer = getCurrentOffer(location);
-    //     List<Flight> flightList = getAllFlights();
-    //     Menu menu = new Menu();
-    //     menu.setFlightList(flightList);
-    //     menu.setCurrentOffer(currentOffer);
-    //     return menu;
-    // }
 }

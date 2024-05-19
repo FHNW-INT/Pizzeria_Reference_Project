@@ -1,18 +1,11 @@
 package ch.fhnw.pizza.controller;
 
 import ch.fhnw.pizza.business.service.BookingService;
-import ch.fhnw.pizza.business.service.MenuService;
 import ch.fhnw.pizza.data.domain.Flight;
-import ch.fhnw.pizza.data.domain.Menu;
-import ch.fhnw.pizza.data.domain.Pizza;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path="/booking")
