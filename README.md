@@ -125,7 +125,7 @@ This Web application was developed using Budibase and it is available for previe
 ## Execution
 > 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
 
-The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
+**The codespace URL of this Repo is subject to change.** Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url. 
 
 > 🚧: This is a shortened description for example purposes. A complete tutorial will be provided in a dedicated lecture.
 
@@ -135,6 +135,22 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
 5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
 6. Update the pizzeria URL in the datasource and publish your app.
+
+### Deployment to a PaaS
+> 🚧: Deployment to PaaS is optional but recommended as it will make your application (backend) accessible without server restart and through a unique, constantly available link.  
+
+Alternatively, you can deploy your application to a free PaaS like [Render](https://dashboard.render.com/register).
+1. Refer to the Dockerfile inside the application root (FHNW-INT/Pizzeria_Reference_Project/pizza).
+2. Adapt line 13 to the name of your jar file. The jar name should be derived from the details in the pom.xml as follows:<br>
+`{artifactId}-{version}.jar` 
+2. Login to Render using your GitHub credentials.
+3. Create a new Web Service and choose Build and deploy from a Git repository.
+4. Enter the link to your (public) GitHub repository and click Continue.
+5. Enter the Root Directory (name of the folder where pom.xml resides).
+6. Choose the Instance Type as Free/Hobby. All other details are default.
+7. Click on Create Web Service. Your app will undergo automatic build and deployment. Monitor the logs to view the progress or error messages. The entire process of Build+Deploy might take several minutes.
+8. After successful deployment, you can access your backend using the generated unique URL (visible on top left under the name of your web service).
+9. This unique URL will remain unchanged as long as your web service is deployed on Render. You can now integrate it in Budibase to make API calls to your custom endpoints.
 
 ## Project Management
 > 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
