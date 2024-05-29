@@ -40,4 +40,8 @@ public class NotesService {
     public void deleteNotes(Long id) {
         notesRepository.deleteById(id);
     }
+
+    public List<Notes> findNotesByTitleContaining(String title) {
+        return notesRepository.findByNotesTitleContaining(title);
+}
 }

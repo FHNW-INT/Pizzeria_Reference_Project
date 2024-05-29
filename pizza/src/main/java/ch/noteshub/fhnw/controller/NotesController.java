@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ch.noteshub.fhnw.business.service.NotesService;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -17,10 +19,14 @@ public class NotesController {
     @Autowired
     private NotesRepository notesRepository;
 
+    @Autowired
+    private NotesService notesService;
+
     @GetMapping
     public List<Notes> getAllNotes() {
         return notesRepository.findAll();
     }
+    
 
     @GetMapping("/{id}")
     public ResponseEntity<Notes> getNotesById(@PathVariable Long id) {
@@ -59,5 +65,11 @@ public class NotesController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+    @GetMapping("/search")
+    public List<Notes> findNotesByTitle(@RequestParam String title) {
+        return notesService.findNotesByTitleContaining(title);
+    }
+    
 }
 
