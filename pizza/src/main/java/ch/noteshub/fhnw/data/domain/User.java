@@ -3,7 +3,7 @@ package ch.noteshub.fhnw.data.domain;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user_table")
 public class User {
 
     @Id

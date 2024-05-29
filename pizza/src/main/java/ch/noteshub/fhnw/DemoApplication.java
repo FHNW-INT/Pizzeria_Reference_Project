@@ -11,6 +11,18 @@ import ch.noteshub.fhnw.business.service.ModuleService;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
+
+import ch.noteshub.fhnw.business.service.DegreeService;
+import ch.noteshub.fhnw.business.service.TeacherService;
+import ch.noteshub.fhnw.business.service.LocationService;
+import ch.noteshub.fhnw.business.service.UserService;
+import ch.noteshub.fhnw.business.service.NotesService;
+import ch.noteshub.fhnw.data.domain.Degree;
+import ch.noteshub.fhnw.data.domain.Teacher;
+import ch.noteshub.fhnw.data.domain.Location;
+import ch.noteshub.fhnw.data.domain.User;
+import ch.noteshub.fhnw.data.domain.Notes;
+
 @SpringBootApplication
 @RestController
 @Hidden // Hide this controller from the Swagger UI
@@ -18,6 +30,21 @@ public class DemoApplication {
 
     @Autowired
     private ModuleService moduleService;
+
+    @Autowired
+    private DegreeService degreeService;
+
+    @Autowired
+    private TeacherService teacherService;
+
+    @Autowired
+    private LocationService locationService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private NotesService notesService;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -68,31 +95,22 @@ public class DemoApplication {
         location.setLocationName("City Center Campus");
         locationService.addLocation(location);
 
-        // Initialize Users
+        //Initialize Users
         User user = new User();
+        user.setUserEmail("alice.johnson@example.com");
         user.setUserFirstname("Alice");
         user.setUserLastname("Johnson");
-        user.setUserEmail("alice.johnson@example.com");
-        user.setUserUsername("alice123");
         user.setUserPassword("password");
+        user.setUserUsername("alice123");
         userService.addUser(user);
 
         user = new User();
+        user.setUserEmail("bob.williams@example.com");
         user.setUserFirstname("Bob");
         user.setUserLastname("Williams");
-        user.setUserEmail("bob.williams@example.com");
-        user.setUserUsername("bob456");
         user.setUserPassword("password");
+        user.setUserUsername("bob456");
         userService.addUser(user);
-
-        // Initialize Roles
-        Role role = new Role();
-        role.setRoleName("Admin");
-        roleService.addRole(role);
-
-        role = new Role();
-        role.setRoleName("Student");
-        roleService.addRole(role);
 
         // Initialize Notes
         Notes notes = new Notes();
