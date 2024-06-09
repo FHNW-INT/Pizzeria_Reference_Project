@@ -1,8 +1,12 @@
 package ch.noteshub.fhnw;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +15,7 @@ import ch.noteshub.fhnw.business.service.ModuleService;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 
-
+import ch.noteshub.fhnw.data.domain.Role;
 import ch.noteshub.fhnw.business.service.DegreeService;
 import ch.noteshub.fhnw.business.service.TeacherService;
 import ch.noteshub.fhnw.business.service.LocationService;
@@ -21,6 +25,8 @@ import ch.noteshub.fhnw.data.domain.Degree;
 import ch.noteshub.fhnw.data.domain.Teacher;
 import ch.noteshub.fhnw.data.domain.Location;
 import ch.noteshub.fhnw.data.domain.User;
+import ch.noteshub.fhnw.data.repository.RoleRepository;
+import ch.noteshub.fhnw.data.repository.UserRepository;
 import ch.noteshub.fhnw.data.domain.Notes;
 
 @SpringBootApplication
@@ -45,6 +51,15 @@ public class DemoApplication {
 
     @Autowired
     private NotesService notesService;
+
+        @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -95,22 +110,38 @@ public class DemoApplication {
         location.setLocationName("City Center Campus");
         locationService.addLocation(location);
 
-        //Initialize Users
-        User user = new User();
-        user.setUserEmail("alice.johnson@example.com");
-        user.setUserFirstname("Alice");
-        user.setUserLastname("Johnson");
-        user.setUserPassword("password");
-        user.setUserUsername("alice123");
-        userService.addUser(user);
+        // Initialize Roles
 
-        user = new User();
-        user.setUserEmail("bob.williams@example.com");
-        user.setUserFirstname("Bob");
-        user.setUserLastname("Williams");
-        user.setUserPassword("password");
-        user.setUserUsername("bob456");
-        userService.addUser(user);
+        Role userRole = new Role();
+        userRole.setName("ROLE_USER");
+        roleRepository.save(userRole);
+
+        Role adminRole = new Role();
+        adminRole.setName("ROLE_ADMIN");
+        roleRepository.save(adminRole);
+
+        // Initialize Users
+
+        User user = new User();
+        user.setUserUsername("myuser");
+        user.setUserPassword(passwordEncoder.encode("password"));
+        user.setUserFirstname("UserFirstName");
+        user.setUserLastname("UserLastName");
+        user.setUserEmail("user@example.com");
+        user.setEnabled(true);
+        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
+        userRepository.save(user);
+
+
+        User admin = new User();
+        admin.setUserUsername("myadmin");
+        admin.setUserPassword(passwordEncoder.encode("password"));
+        admin.setUserFirstname("AdminFirstName");
+        admin.setUserLastname("AdminLastName");
+        admin.setUserEmail("admin@example.com");
+        admin.setEnabled(true);
+        admin.setRoles(new HashSet<>(Arrays.asList(userRole, adminRole)));
+        userRepository.save(admin);
 
         // Initialize Notes
         Notes notes = new Notes();

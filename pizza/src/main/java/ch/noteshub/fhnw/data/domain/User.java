@@ -1,6 +1,7 @@
 package ch.noteshub.fhnw.data.domain;
 
 import jakarta.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "user_table")
@@ -20,11 +21,22 @@ public class User {
     @Column(name = "user_email", nullable = false)
     private String userEmail;
 
-    @Column(name = "user_username", nullable = false)
+    @Column(name = "user_username", nullable = false, unique = true)
     private String userUsername;
 
     @Column(name = "user_password", nullable = false)
     private String userPassword;
+
+    @Column(nullable = false)
+    private boolean enabled;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "user_roles",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
 
     // Getters and Setters
     public Long getUserId() {
@@ -73,5 +85,21 @@ public class User {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
