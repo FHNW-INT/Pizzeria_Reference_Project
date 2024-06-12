@@ -47,7 +47,7 @@ User:
 9. As a User I want to download notes that are necessary for my specific module. 
 11. As a User I want to favourise notes so I can (and see how many favs)
 13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
-14. As a User, I want to filter notes by module or date,, so I can easily find the most relevant notes.
+14. As a User, I want to filter notes by module, date, location and lecturer, so I can easily find the most relevant notes.
 
 Admin: 
 
