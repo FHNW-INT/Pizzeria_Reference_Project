@@ -8,8 +8,8 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "user_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id", nullable = false, updatable = false)
     private Long userId;
 
     @Column(name = "user_firstname", nullable = false)
@@ -18,7 +18,7 @@ public class User {
     @Column(name = "user_lastname", nullable = false)
     private String userLastname;
 
-    @Column(name = "user_email", nullable = false)
+    @Column(name = "user_email", nullable = false, unique = true)
     private String userEmail;
 
     @Column(name = "user_username", nullable = false, unique = true)
@@ -37,6 +37,9 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Favorite> favorites;
 
     // Getters and Setters
     public Long getUserId() {
@@ -101,5 +104,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Set<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(Set<Favorite> favorites) {
+        this.favorites = favorites;
     }
 }

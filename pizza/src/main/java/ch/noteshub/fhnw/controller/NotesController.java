@@ -1,75 +1,46 @@
 package ch.noteshub.fhnw.controller;
 
-import ch.noteshub.fhnw.data.domain.Notes;
-import ch.noteshub.fhnw.data.repository.NotesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ch.noteshub.fhnw.business.service.NotesService;
-
+import ch.noteshub.fhnw.data.domain.Notes;
+import ch.noteshub.fhnw.data.domain.Favorite;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/notes")
 public class NotesController {
 
     @Autowired
-    private NotesRepository notesRepository;
-
-    @Autowired
     private NotesService notesService;
 
-    @GetMapping
-    public List<Notes> getAllNotes() {
-        return notesRepository.findAll();
-    }
-    
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Notes> getNotesById(@PathVariable Long id) {
-        Optional<Notes> notes = notesRepository.findById(id);
-        if (notes.isPresent()) {
-            return ResponseEntity.ok(notes.get());
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+    @PostMapping("/{noteId}/favorite")
+    public void favoriteNote(@PathVariable Long noteId, @RequestParam Long userId) {
+        notesService.addFavorite(userId, noteId);
     }
 
-    @PostMapping
-    public Notes createNotes(@RequestBody Notes notes) {
-        return notesRepository.save(notes);
+    @DeleteMapping("/{noteId}/favorite")
+    public void unfavoriteNote(@PathVariable Long noteId, @RequestParam Long userId) {
+        notesService.removeFavorite(userId, noteId);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Notes> updateNotes(@PathVariable Long id, @RequestBody Notes notesDetails) {
-        Optional<Notes> notes = notesRepository.findById(id);
-        if (notes.isPresent()) {
-            Notes notesToUpdate = notes.get();
-            notesToUpdate.setNotesTitle(notesDetails.getNotesTitle());
-            return ResponseEntity.ok(notesRepository.save(notesToUpdate));
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+    @GetMapping("/{noteId}/favorites/count")
+    public int getFavoriteCount(@PathVariable Long noteId) {
+        Notes notes = notesService.findById(noteId);
+        return notes.getFavoriteCount();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNotes(@PathVariable Long id) {
-        Optional<Notes> notes = notesRepository.findById(id);
-        if (notes.isPresent()) {
-            notesRepository.delete(notes.get());
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+    @GetMapping("/favorites/{userId}")
+    public List<Favorite> getUserFavorites(@PathVariable Long userId) {
+        return notesService.findFavoritesByUser(userId);
     }
 
+    // Add the missing method here
     @GetMapping("/search")
     public List<Notes> findNotesByTitle(@RequestParam String title) {
         return notesService.findNotesByTitleContaining(title);
     }
-    
-}
 
+    // Other methods related to notes
+}
