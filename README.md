@@ -40,24 +40,20 @@ User:
 1. As a User I want to have a website that is easily accessible  
 2. As a User I want to have a website that is mobile friendly. 
 3. As a User I want to I want to have a user account so I can authenticate myself. 
-4. As a User, I want to customize my profile, including a profile picture and bio, so I can share more about myself with others 
 5. As a User I want to delete my user account 
 6. As a User I want to have the oppurtunity to change my password or E-Mail  
-7. As a User I want to upload my notes for a specific module.  
+7. As a User I want to upload my notes for a specific moduleüä.  
 8. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
 9. As a User I want to download notes that are necessary for my specific module. 
-10. As a User I want to share my thoughts on these notes by leaving a comment. 
-11. As a User I want to like notes so other can see that the work is good 
-12. As a User I want to dislike notes so others can the the notes arent to my liking  
+11. As a User I want to favourise notes so I can (and see how many favs)
 13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
-14. As a User, I want to filter notes by module, date, or popularity, so I can easily find the most relevant or high-quality notes.
+14. As a User, I want to filter notes by module or date,, so I can easily find the most relevant notes.
 
 Admin: 
 
-16. As an Admin, I want to view user activity and engagement metrics, so I can understand how users interact with the platform and improve it. 
 17. As an Admin, I want to delete an account. 
-18. As an Admin, I want to delete comments. 
-19. As an Admin, I want to delete a post. 
+18. As an Admin, I want to delete notes. 
+19. As an Admin, I want to add and delete a module.
 
 ### Use Case
 
