@@ -51,9 +51,9 @@ User:
 
 Admin: 
 
-17. As an Admin, I want to delete an account. 
-18. As an Admin, I want to delete notes. 
-19. As an Admin, I want to add and delete a module.
+15. As an Admin, I want to delete an account. 
+16. As an Admin, I want to delete notes. 
+17. As an Admin, I want to add and delete a module.
 
 ### Use Case
 
