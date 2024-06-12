@@ -42,7 +42,7 @@ User:
 3. As a User I want to I want to have a user account so I can authenticate myself. 
 5. As a User I want to delete my user account 
 6. As a User I want to have the oppurtunity to change my password or E-Mail  
-7. As a User I want to upload my notes for a specific moduleüä.  
+7. As a User I want to upload my notes for a specific module.  
 8. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
 9. As a User I want to download notes that are necessary for my specific module. 
 11. As a User I want to favourise notes so I can (and see how many favs)
