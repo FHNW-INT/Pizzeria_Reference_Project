@@ -86,17 +86,19 @@ The `ch.fhnw.pizza.data.domain` package contains the following domain objects / 
 ### Business Logic 
 > 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
 
-Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
+Based on UC-3, the users can search notes by title and filter them by module or location. If no notes are found, notes from other years will be displayed as alternatives. 
 
-- If the location is "Basel", the message is "10% off on all large pizzas!!!"
-- If the location is "Brugg", the message is "two for the price of One on all small pizzas!!!"
-- Otherwise, the message is "No special offer".
-
-**Path**: [`/api/menu/?location="Basel"`] 
-
-**Param**: `value="location"` Admitted value: "Basel","Brugg".
-
-**Method:** `GET`
+Possible path: /api/notes/?q=summary&module=math2&location=basel&date=2024&semester=fs&sort=pop
+Params: 
+Values
+value=”q” Admitted values: Any
+value=”module” Admitted values: Module list
+value=”location” Admitted values: "basel”,”brugg”,”olten”, “muttenz”
+value=”date” Admitted values: Year
+value=”semester” Admitted values: “fs”, “hs”
+value=”sort” Admitted values: “mod”, “dat”, “pop” 
+Method=GET
+`
 
 ## Implementation
 > 🚧: Briefly describe your technology stack, which apps were used and for what.
