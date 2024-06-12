@@ -60,10 +60,11 @@ Admin:
 ![](images/use-case.png)
 
 
-- UC-1 [Show all the Pizza]: Admin can retrieve all the pizza on the menu
-- UC-2 [Show a Pizza]: Admin can retrieve the information on a specific pizza.
-- UC-3 [Edit a Pizza]: Admin can create, update, and delete pizzas from the menu.
-- UC-4 [Show Current Location Offer]: User can retrieve special menu by location
+- UC-1 [Upload notes]: User can upload their notes. 
+- UC-2 [View or download notes]: User can view or download uploaded notes from other students.
+- UC-3 [Search and filter for notes]: User can search, filter and sort notes by module, location, date, or lecturer. 
+- UC-4 [Delete accounts]: Admin can delete accounts that are violating the guidelines. 
+
 
 ## Design
 > 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
