@@ -40,20 +40,20 @@ User:
 1. As a User I want to have a website that is easily accessible  
 2. As a User I want to have a website that is mobile friendly. 
 3. As a User I want to I want to have a user account so I can authenticate myself. 
-5. As a User I want to delete my user account 
-6. As a User I want to have the oppurtunity to change my password or E-Mail  
-7. As a User I want to upload my notes for a specific module.  
-8. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
-9. As a User I want to download notes that are necessary for my specific module. 
-11. As a User I want to favourise notes so I can (and see how many favs)
-13. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
-14. As a User, I want to filter notes by module, date, location and lecturer, so I can easily find the most relevant notes.
+4. As a User I want to delete my user account 
+5. As a User I want to have the oppurtunity to change my password or E-Mail  
+6. As a User I want to upload my notes for a specific module.  
+7. As a User I want to delete my notes for a specific module if I don’t want to share then anymore.  
+8. As a User I want to download notes that are necessary for my specific module. 
+9. As a User I want to favourise notes so I can (and see how many favs)
+10. As a User, I want to search for notes by keywords, so I can find relevant information quickly. 
+11. As a User, I want to filter notes by module, date, location and lecturer, so I can easily find the most relevant notes.
 
 Admin: 
 
-15. As an Admin, I want to delete an account. 
-16. As an Admin, I want to delete notes. 
-17. As an Admin, I want to add and delete a module.
+12. As an Admin, I want to delete an account. 
+13. As an Admin, I want to delete notes. 
+14. As an Admin, I want to add and delete a module.
 
 ### Use Case
 
