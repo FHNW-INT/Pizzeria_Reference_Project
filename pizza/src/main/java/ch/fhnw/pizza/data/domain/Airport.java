@@ -1,19 +1,29 @@
 package ch.fhnw.pizza.data.domain;
 
 import java.util.List;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import io.swagger.v3.oas.annotations.Hidden;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "airport")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Airport {
 
     @Id
@@ -32,12 +42,17 @@ public class Airport {
     private String icaoCode;
 
     @OneToMany(mappedBy = "departureAirport")
-    private List<Flight> departures;
+    @JsonIgnore
+    private Set<Flight> departures;
 
     @OneToMany(mappedBy = "arrivalAirport")
-    private List<Flight> arrivals;
+    @JsonIgnore
+    private Set<Flight> arrivals;
 
-    @ManyToMany(mappedBy = "airports")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "destination_airport", 
+      joinColumns = @JoinColumn(name = "airport_fk", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "destination_fk", referencedColumnName = "id"))
     private List<Destination> destinations;
 
     public Long getId() {
@@ -72,19 +87,19 @@ public class Airport {
         this.icaoCode = icaoCode;
     }
 
-    public List<Flight> getDepartures() {
+    public Set<Flight> getDepartures() {
         return departures;
     }
 
-    public void setDepartures(List<Flight> departures) {
+    public void setDepartures(Set<Flight> departures) {
         this.departures = departures;
     }
 
-    public List<Flight> getArrivals() {
+    public Set<Flight> getArrivals() {
         return arrivals;
     }
 
-    public void setArrivals(List<Flight> arrivals) {
+    public void setArrivals(Set<Flight> arrivals) {
         this.arrivals = arrivals;
     }
 

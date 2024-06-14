@@ -178,6 +178,7 @@ Then, the following further dependencies have been added to the project `pom.xml
 
 - SWAGGER:
 
+
   ```XML
    <dependency>
       <groupId>org.springdoc</groupId>

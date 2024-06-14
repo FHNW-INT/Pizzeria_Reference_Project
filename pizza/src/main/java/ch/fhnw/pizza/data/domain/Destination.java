@@ -34,10 +34,9 @@ public class Destination {
     private List<String> tags;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "airport", 
+    @JoinTable(name = "destination_airport", 
       joinColumns = @JoinColumn(name = "destination_fk", referencedColumnName = "id"), 
-      inverseJoinColumns = @JoinColumn(name = "airport_fk", 
-      referencedColumnName = "id"))
+      inverseJoinColumns = @JoinColumn(name = "airport_fk", referencedColumnName = "id"))
       private List<Airport> airports;    
 
 
