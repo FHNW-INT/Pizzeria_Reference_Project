@@ -17,7 +17,7 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @GetMapping(path="/pizza/{id}", produces = "application/json")
+    @GetMapping(path="/pizzas/{id}", produces = "application/json")
     public ResponseEntity getPizza(@PathVariable Long id) {
         try{
             Pizza pizza = menuService.findPizzaById(id);
@@ -28,14 +28,14 @@ public class MenuController {
         }
     }
 
-    @GetMapping(path="/pizza", produces = "application/json")
+    @GetMapping(path="/pizzas", produces = "application/json")
     public List<Pizza> getPizzaList() {
         List<Pizza> pizzaList = menuService.getAllPizzas();
 
         return pizzaList;
     }
 
-    @PostMapping(path="/pizza", consumes="application/json", produces = "application/json")
+    @PostMapping(path="/pizzas", consumes="application/json", produces = "application/json")
     public ResponseEntity addPizza(@RequestBody Pizza pizza) {
         try{
             pizza = menuService.addPizza(pizza);
@@ -47,7 +47,7 @@ public class MenuController {
         
     }
 
-    @PutMapping(path="/pizza/{id}", consumes="application/json", produces = "application/json")
+    @PutMapping(path="/pizzas/{id}", consumes="application/json", produces = "application/json")
     public ResponseEntity updatePizza(@PathVariable Long id, @RequestBody Pizza pizza) {
         try{
             pizza = menuService.updatePizza(id, pizza);
@@ -60,7 +60,7 @@ public class MenuController {
         
     }
 
-    @DeleteMapping(path="/pizza/{id}")
+    @DeleteMapping(path="/pizzas/{id}")
     public ResponseEntity<String> deletePizza(@PathVariable Long id) {
         try{
             menuService.deletePizza(id);

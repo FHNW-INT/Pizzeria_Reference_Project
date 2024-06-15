@@ -186,6 +186,23 @@ Then, the following further dependencies have been added to the project `pom.xml
 
 This Web application was developed using Budibase and it is available for preview at https://flyaround.budibase.app/app/flyaound.
 
+
+### Deployment to a PaaS
+> 🚧: Deployment to PaaS is optional but recommended as it will make your application (backend) accessible without server restart and through a unique, constantly available link.  
+
+Alternatively, you can deploy your application to a free PaaS like [Render](https://dashboard.render.com/register).
+1. Refer to the Dockerfile inside the application root (FHNW-INT/Pizzeria_Reference_Project/pizza).
+2. Adapt line 13 to the name of your jar file. The jar name should be derived from the details in the pom.xml as follows:<br>
+`{artifactId}-{version}.jar` 
+2. Login to Render using your GitHub credentials.
+3. Create a new Web Service and choose Build and deploy from a Git repository.
+4. Enter the link to your (public) GitHub repository and click Continue.
+5. Enter the Root Directory (name of the folder where pom.xml resides).
+6. Choose the Instance Type as Free/Hobby. All other details are default.
+7. Click on Create Web Service. Your app will undergo automatic build and deployment. Monitor the logs to view the progress or error messages. The entire process of Build+Deploy might take several minutes.
+8. After successful deployment, you can access your backend using the generated unique URL (visible on top left under the name of your web service).
+9. This unique URL will remain unchanged as long as your web service is deployed on Render. You can now integrate it in Budibase to make API calls to your custom endpoints.
+
 ## Project Management
 
 ### Roles

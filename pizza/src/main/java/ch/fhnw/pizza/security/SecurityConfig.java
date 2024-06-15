@@ -26,11 +26,13 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(
             User.withUsername("myuser")
-                .password("{noop}password")
+                //.password("{noop}password") //create user with an encrypted password instead of the plain text password
+                .password("{bcrypt}$2a$10$9fxQtdWuRaYn5UchAm5iAexbPi7tmRadnDogJwXPR9fVDJyt9g/su")
                 .authorities("READ","ROLE_USER")
                 .build(), 
             User.withUsername("myadmin")
-                .password("{noop}password")
+                //.password("{noop}password") //create user with an encrypted password instead of the plain text password
+                .password("{bcrypt}$2a$10$9fxQtdWuRaYn5UchAm5iAexbPi7tmRadnDogJwXPR9fVDJyt9g/su")
                 .authorities("READ","ROLE_ADMIN")
                 .build());
 
@@ -42,14 +44,17 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests( auth -> auth
                         .requestMatchers("/menu").hasRole("USER") //note that the role need not be prefixed with "ROLE_"
-                        .requestMatchers("/menu/pizza/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
+                        .requestMatchers("/menu/pizzas/**").hasRole("ADMIN") //note that the role need not be prefixed with "ROLE_"
                         .requestMatchers("/menu/**",
                                                     "/**", //allow access to the home page
                                                     "/swagger-ui.html", //allow access to the swagger UI
                                                     "/v3/api-docs/**",  //allow access to the swagger API documentation
-                                                    "/swagger-ui/**").permitAll() //allow access to the swagger UI
+                                                    "/swagger-ui/**",   //allow access to the swagger UI
+                                                    "/h2-console/**")   //allow access to the h2-console
+                                                    .permitAll() 
                         .anyRequest().hasAuthority("SCOPE_READ")           
                 )       
+                .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable())) //needed to allow access to the h2-console
                 .formLogin(withDefaults()) //need to include a static import for withDefaults, see the imports at the top of the file
                 .httpBasic(withDefaults())
                 .build(); 
