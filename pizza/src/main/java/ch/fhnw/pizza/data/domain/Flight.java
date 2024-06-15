@@ -1,12 +1,11 @@
 package ch.fhnw.pizza.data.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +36,7 @@ public class Flight {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "flight_date")
-    private Date  flightDate;
+    private LocalDate  flightDate;
 
     @ManyToOne
     @JoinColumn(name = "departure_airport_fk")
@@ -49,11 +48,13 @@ public class Flight {
 
     @Temporal(TemporalType.TIME)
     @Column(name = "departure_time")
-    private Date  departureTime;
+    @JsonFormat(pattern = "hh:mm")
+    private LocalTime  departureTime;
 
     @Temporal(TemporalType.TIME)
     @Column(name = "arrival_time")
-    private Date  arrivalTime;
+    @JsonFormat(pattern = "hh:mm")
+    private LocalTime  arrivalTime;
 
     @OneToMany(mappedBy = "flight")
     private List<Booking> bookings;
@@ -61,6 +62,9 @@ public class Flight {
     @ManyToOne
     @JoinColumn(name = "aircraft_fk")
     private Aircraft aircraft;
+
+    @Column(name = "price")
+    private double price;
 
     // Getter and Setter methods for id
     public Long getId() {
@@ -81,11 +85,11 @@ public class Flight {
     }
 
     // Getter and Setter methods for flightDate
-    public Date getFlightDate() {
+    public LocalDate getFlightDate() {
         return flightDate;
     }
 
-    public void setFlightDate(Date flightDate) {
+    public void setFlightDate(LocalDate flightDate) {
         this.flightDate = flightDate;
     }
 
@@ -108,20 +112,20 @@ public class Flight {
     }
 
     // Getter and Setter methods for departureTime
-    public Date getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
     }
 
     // Getter and Setter methods for arrivalTime
-    public Date getArrivalTime() {
+    public LocalTime getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(Date arrivalTime) {
+    public void setArrivalTime(LocalTime arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
@@ -141,5 +145,14 @@ public class Flight {
 
     public void setAircraft(Aircraft aircraft) {
         this.aircraft = aircraft;
+    }
+
+    // Getter and Setter methods for price
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

@@ -41,6 +41,9 @@ public class Airport {
     @Column(name = "icao_code")
     private String icaoCode;
 
+    @Column(name = "city")
+    private String city;
+
     @OneToMany(mappedBy = "departureAirport")
     @JsonIgnore
     private Set<Flight> departures;
@@ -109,6 +112,18 @@ public class Airport {
 
     public void setDestinations(List<Destination> destinations) {
         this.destinations = destinations;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getSearchLabel() {
+        return city + " (" + iataCode + ")";
     }
 
 }

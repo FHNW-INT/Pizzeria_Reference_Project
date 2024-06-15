@@ -3,9 +3,11 @@ package ch.fhnw.pizza.controller;
 import ch.fhnw.pizza.business.service.BookingService;
 import ch.fhnw.pizza.data.domain.Airport;
 import ch.fhnw.pizza.data.domain.Flight;
+import ch.fhnw.pizza.data.projection.BookingProjection;
 import ch.fhnw.pizza.data.projection.FlightProjection;
 import ch.fhnw.pizza.data.repository.AirportRepository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,76 +22,16 @@ public class BookingController {
     @Autowired
     private BookingService bookingService;
 
-    
 
-    @GetMapping(path="/flight/{flightDesignator}", produces = "application/json")
-    public ResponseEntity getFlight(@PathVariable String flightDesignator) {
+    @GetMapping(path="/booking/{id}", produces = "application/json")
+    public ResponseEntity getBooking(@PathVariable Long id) {
         try{
-            FlightProjection flight = bookingService.findFlightDesignator(flightDesignator);
-            return ResponseEntity.ok(flight);
+            BookingProjection booking = bookingService.getBookingById(id);
+            return ResponseEntity.ok(booking);
         }
         catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No flight found with given designator");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No booking found with given id");
         }
     }
-
-    @GetMapping(path="/flight", produces = "application/json")
-    public List<FlightProjection> getFlightList() {
-        List<FlightProjection> flightList = bookingService.getAllFlights();
-
-        return flightList;
-    }
-
-    @GetMapping(path="/airport/{iataCode}", produces = "application/json")
-    public ResponseEntity getAirport(@PathVariable String iataCode) {
-        try{
-            Airport airport = bookingService.findAirportByIataCode(iataCode);
-            return ResponseEntity.ok(airport);
-        }
-        catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No airport found with given IATA code.");
-        }
-    }
-
-    // @PostMapping(path="/pizza", consumes="application/json", produces = "application/json")
-    // public ResponseEntity addPizza(@RequestBody Pizza pizza) {
-    //     try{
-    //         pizza = menuService.addPizza(pizza);
-            
-    //     } catch (Exception e) {
-    //         return ResponseEntity.status(HttpStatus.CONFLICT).body("Pizza already exists with given name");
-    //     }
-    //     return ResponseEntity.ok(pizza);
-        
-    // }
-
-    // @PutMapping(path="/pizza/{id}", consumes="application/json", produces = "application/json")
-    // public ResponseEntity updatePizza(@PathVariable Long id, @RequestBody Pizza pizza) {
-    //     try{
-    //         pizza = menuService.updatePizza(id, pizza);
-            
-    //     } catch (Exception e) {
-    //         return ResponseEntity.status(HttpStatus.CONFLICT).body("No pizza found with given id");
-
-    //     }
-    //     return ResponseEntity.ok(pizza);
-        
-    // }
-
-    // @DeleteMapping(path="/pizza/{id}")
-    // public ResponseEntity<String> deletePizza(@PathVariable Long id) {
-    //     try{
-    //         menuService.deletePizza(id);
-    //         return ResponseEntity.ok("Pizza with id " + id + " deleted");
-    //     } catch (Exception e) {
-    //         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pizza not found");
-    //     }
-    // }
-
-    // @GetMapping(path="", produces = "application/json")
-    // public ResponseEntity<Menu> getMenu(@RequestParam String location) {
-    //     Menu menu = menuService.getMenuByLocation(location);
-    //     return ResponseEntity.ok(menu);      
-    // }
     
 }
