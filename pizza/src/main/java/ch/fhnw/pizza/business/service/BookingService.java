@@ -1,5 +1,6 @@
 package ch.fhnw.pizza.business.service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -48,6 +49,7 @@ public class BookingService {
             booking.setPassenger(storedPassenger); // set the passenger to the booking
         }
         
+        booking.setBookingDate(LocalDate.now());
 
         Booking savedBooking = bookingRepository.save(booking);
         return getBookingById(savedBooking.getId());

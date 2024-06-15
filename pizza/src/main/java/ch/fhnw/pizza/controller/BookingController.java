@@ -37,19 +37,15 @@ public class BookingController {
         }
     }
     
-
-
     @GetMapping(produces = "application/json")
-    public List<BookingProjection> getBookingList() {
-        List<BookingProjection> bookings = bookingService.getAllBookings();
-        return bookings;
-    }
-
-
-    @GetMapping(produces = "application/json")
-    public List<BookingProjection> getUserBookingList(@RequestParam("userEmail") String userEmail) {
-        List<BookingProjection> bookings = bookingService.getAllUserBookings(userEmail);
-        return bookings;
+    public List<BookingProjection> getBookingList(@RequestParam(value = "userEmail", required = false) String userEmail) {
+        
+        if (userEmail == null || userEmail.isBlank()) {
+            return bookingService.getAllBookings();
+        }
+        else {
+            return bookingService.getAllUserBookings(userEmail);
+        }
     }
 
     

@@ -1,5 +1,6 @@
 package ch.fhnw.pizza.data.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import io.swagger.v3.oas.annotations.Hidden;
@@ -26,11 +27,11 @@ public class Booking {
 
     @Temporal(TemporalType.DATE)
     @Column(name = "checkin_date")
-    private Date checkinDate;
+    private LocalDate checkinDate;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "booking_date")
-    private Date bookingDate;
+    private LocalDate bookingDate;
 
     @ManyToOne
     @JoinColumn(name = "passenger_fk")
@@ -51,19 +52,19 @@ public class Booking {
         this.id = id;
     }
 
-    public Date getCheckinDate() {
+    public LocalDate getCheckinDate() {
         return checkinDate;
     }
 
-    public void setCheckinDate(Date checkinDate) {
+    public void setCheckinDate(LocalDate checkinDate) {
         this.checkinDate = checkinDate;
     }
 
-    public Date getBookingDate() {
+    public LocalDate getBookingDate() {
         return checkinDate;
     }
 
-    public void setBookingDate(Date checkinDate) {
+    public void setBookingDate(LocalDate checkinDate) {
         this.checkinDate = checkinDate;
     }
 

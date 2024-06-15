@@ -134,15 +134,6 @@ public class Flight {
         this.bookings = bookings;
     }
 
-    // Getter and Setter methods for aircraft
-    public Aircraft getAircraft() {
-        return aircraft;
-    }
-
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
-    }
-
     // Getter and Setter methods for price
     public double getPrice() {
         return price;

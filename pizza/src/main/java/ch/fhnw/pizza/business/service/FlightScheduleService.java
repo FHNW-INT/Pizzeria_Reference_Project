@@ -86,7 +86,6 @@ public class FlightScheduleService {
         flightToUpdate.setDepartureTime(flight.getDepartureTime());
         flightToUpdate.setArrivalTime(flight.getArrivalTime());
         flightToUpdate.setBookings(flight.getBookings());
-        flightToUpdate.setAircraft(flight.getAircraft());
 
         return flightRepository.save(flightToUpdate);
     }

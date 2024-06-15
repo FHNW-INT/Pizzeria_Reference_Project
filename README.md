@@ -22,6 +22,7 @@ Members:
     - [User Stories](#user-stories)
     - [Use Case](#use-case)
   - [Design](#design)
+    - [Design](#design-1)
     - [Wireframe](#wireframe)
     - [Prototype](#prototype)
     - [Domain Design](#domain-design)
@@ -30,7 +31,6 @@ Members:
   - [Implementation](#implementation)
     - [Backend Technology](#backend-technology)
     - [Frontend Technology](#frontend-technology)
-  - [Execution](#execution)
   - [Project Management](#project-management)
     - [Roles](#roles)
     - [Milestones](#milestones)
@@ -39,11 +39,7 @@ Members:
 
 ## Analysis
 
-> 🚧: You can reuse the analysis (you made) from other projects (e.g., requirement engineering), but it must be submitted according to the following template. 
-
 ### Scenario
-
-> 🔍: To review
 
 **Fly Around** is a small PoC project for the Internet Technology course at FHNW.
 The project is about a simple web app to search for flights to cool destinations and create basic bookings.
@@ -52,37 +48,30 @@ The airline industry domain is wide, to keep the project simple we decided to li
 
 ### User Stories
 
-> 🚧: Todo
 
 1. As an Admin, I want to have a Web app to use on different mobile devices and desktop computers.
 2. As an Admin, I want to see a consistent visual appearance to navigate easily, and it should look consistent.
-3. As an Admin, I want to use list views to explore and read my business data.
-4. As an Admin, I want to use edit and create views to maintain my business data.
+3. As an Admin, I want to use list views to explore and read my flights.
+4. As an Admin, I want to use edit and create views to maintain my flights.
 5. As an Admin, I want to log-in so that I can authenticate myself.
-6. As a User, I want to use list views so that I can access public pages.
-7. (Optional) As a User, I want to authenticate myself so that I can read my personal and confidential data.
+6. As a User, I want to use list views so that I can access public pages and search flights.
+7. As a User, I want to authenticate myself so that I can view my bookings.
 
 ### Use Case
 
-> 🔍: To review
 
-![use-case-diagram](https://www.plantuml.com/plantuml/png/TPJDQiCm48JlUeebHqD2VlfF24aiVCl5ngVIWx2sZeWZ1qa-bD9tRsKJixNbKrRC5p7iZBotJXZNN2jMuQS3LuDHvTc1L0OBfshDHE5g0mTvLVSvjsWOkudY8ag4fFewcBhH4huP0sWi5i8YpABeFO-NguyeWjYWS9xqLyz0M8YJCRhsQ8f2KZ0DW1iFvZSvk3CFe0yUvLZXVvG7q4UFdeGMvHs5h3YZR2fi_tDACiR0_y1siO0uWJVORfKkgaRYRaUaT5hAfoK-bCOMdyWoZtLzKRhijdaSiy_zDYcP1iWNiYFAycF0mYknmD4wfOLlIMU3Z_ZLihSnfDC0lIB93laymA-9zI7F0_o6P4nusmNCstnv5oyV1zKfwQIIJofyg8oj-QRslKDXYdDhAid-qAbUUINiwOSn_qfXFj_vTlHpIcPEvYHZxGjl3oTwQjUoHotzD-8N)
+![use-case-diagram](https://www.plantuml.com/plantuml/png/TTBDQeD040Vm-pp5aAEGqE-F8fAeUCl5uAdqiEnETSbcDwphePI-UrsBOHlrvCZy79m_isqTiwuxAL3qwT0PjB9k70ffYJjfD33kZCMTECcnhbgo06V6ZwmcBDJNpffE2_m6GEnQugmbN4NHUvNTt7v44MQMcFFIZruXQp4hflJEqvAO264v0-yzhCxYQcOrGnyypKdHVvhFq4TFzqopUgHuu0s9Jj7mpRuu0A1_OBpPz1lW6yQnr5nrWf8aQ9NBhMgvbL-rPi9y2i9CZJbANV-bcKxjyoNDK9OpyYN8ABHv2Z3LhrwF-H2pl1bm7mxYqlxm0-2F1jVhnF_ifIw3EW_gVjfmSCEB3tvBMlH7-Wi0)
 
 
 - **[UC01] Create Flight** - Admin can create flights.
 - **[UC02] Read Flight** - Admin and user can create flights.
-- **[UC03] Update Flight** - Admin can update flights.
+- ~~**[UC03] Update Flight** - Admin can update flights.~~
 - **[UC04] Delete Flight** - Admin can delete flights.
-- **[UC05] Manage Flight Schedule** - Admin can use a dashboard to manage the flight schedule by creating, reading, updating, and deleteing flights.
+- **[UC05] Manage Flight Schedule** - Admin can use a dashboard to manage the flight schedule by creating, reading, ~~updating~~, and deleteing flights.
 - **[UC06] Create Booking** - User can create bookings.
 - **[UC07] Read Booking** - User can read his/her own bookings.
 - **[UC08] Delete Booking** - User can delete his/her own bookings.
-- **[UC09] Create Destination** - Admin can create destinations.
-- **[UC10] Read Destination** - Admin and user can read destinations.
-- **[UC11] Update Destination** - Admin can update destinations.
-- **[UC12] Delete Destination** - Admin can delete destinations.
-- **[UC13] Manage Destinations** - Admin can use a dashboard to manage the destinations database by creating, reading, updating, and deleting destinations.
-- **[UC14] Flight Search** - User can search flights by flight details (e.g. flight number and date) or by destination details (e.g. activity, or city). The result is presented with a list view which includes flight.
+- **[UC09] Flight Search** - User can search flights by flight details (e.g. flight number and date) or by destination details (e.g. activity, or city). The result is presented with a list view which includes flight.
 
 Remarks and assumptions:
 
@@ -92,33 +81,32 @@ Remarks and assumptions:
   
 ## Design
 
-> 🚧: Todo  
-> 🚧: Keep in mind the Corporate Identity (CI); you shall decide appropriately the color schema, graphics, typography, layout, User Experience (UX), and so on.
+### Design
+
+For our web app, we will adopt a simple, clean, and modern design. The goal is to create a user-friendly interface that is visually appealing and easy to navigate. We will use a minimalist approach, focusing on clear typography, ample white space, and intuitive user interactions. The color palette will be carefully chosen to create a harmonious and professional look. Our design will prioritize functionality and usability, ensuring that users can easily access the desired features and information. By adopting a modern design, we aim to provide a seamless and enjoyable user experience. 
 
 ### Wireframe
 
-> 🚧: Todo  
-> 🚧: It is suggested to start with a wireframe. The wireframe focuses on the website structure (Sitemap planning), sketching the pages using Wireframe components (e.g., header, menu, footer) and UX. You can create a wireframe already with draw.io or similar tools.
+This wireframe design represents the initial idea for the user interface of our web app. It showcases the layout and structure we envision for the different pages and components.
 
-Starting from the home page, we can visit different pages. Available public pages are visible in the menu...
+![design1](/images/design1.png)
+![design1](/images/design2.png)
 
 ### Prototype
 
-> 🚧: Todo  
-> 🚧: A prototype can be designed using placeholder text/figures in Budibase. You don't need to connect the front-end to back-end in the early stages of the project development.
+
+
+![design1](/images/home-search.png)
 
 ### Domain Design
 
-> 🔍: To review
-
 The `ch.fhnw.flyaround.data.domain` package contains the following domain objects / entities including getters and setters:
 
-![class-diagram](https://www.plantuml.com/plantuml/png/XLF1Yjim4BtxAuIFXOJs6af8sr08b59eVs1gZnqHMJAZoLwM_VSTAOgbQBFPc_JUqyoyD_RECn2V9zDq1hnNFuqUZwoU6wLqhpRgbxEZd8S8xz7hqG8x4kOlauvSZtCeGVXDq-o8XKid8O58Fu6vG-Lt__I4mko1up6_kaDewWY6M2WT1Vtlt4bcyM5UxVdhztJVDYzDaunTvSdQugm3OuAhqj7aUZGbu14uL3zOnX5f2MJfU8bD-gLsoMOLf9ABXGdBqXeOVhZ-5kl0rLYFdhK5riw6IFAjJBAU9qTP4pcOibIrzZni7g8ZFGTj2JFax7q4O-TB10kJ8YbxfqL9IiLAkYDsfuELhTykVvONQ2L-GVzSpqtQX60NQxbw5jKx7pHv_brvC_0MmmcqAO77NrfogDelhLgjLFjvlVxKfhdanK1kKjkFLEn44s-LP4bh4yV0NWsEr5OrsUSZlPUonQwJg93dV_G8GPp-c7S7TJCIC0Rf3cr_dimh)
+![class-diagram](https://www.plantuml.com/plantuml/png/XLF1IiD04BtlLomv2YrwBHAgLa4G4VG7nkma7Phibjcf5-c_EqatRbEBlSsyDpkyzoPPHW6MNTUQgeKOxLDBpLhijx6Md5tOb-0RhUi1Nc6aneC4LkPTc0REuRPVmNX7l0qiogLAIM2cBsZFKFdT1tMep0faAFEhCmHnnL2dHKEfw6S86zKIUxqKvVO-zQNP6vECZGecpgms7ZeyjaCWy13S5AiWd68Eev07eU1xZRaxjlOhwP1hcRsT4ljHQ1BV2oKt7g1QOxLvzfh4D93a_0opYyYF7L1xf7ch-z4to8gzZRL9nrNieCNarF9KoYr_4CHHNa-YQ-4lXXCD5uyrdgcuAUniPelh-VogICBqHSsXi-MbAGawaxhfo1ZkOf21pjQ1RMbDzldVVDIrPedUwV_o0m00)
 
 Remarks:
 
 - To reduce the complexity we assumend that a booking only contains 1 passenger and 1 flight.
-- We added a `Destination` class which serves as aggregator of airports and will help us in searching and displaying flights. 
 
 ### Backend Architecture
 
@@ -130,30 +118,19 @@ The following digram shows the high level architecture of the backend components
 
 ### Business Logic
 
-> 🚧: Todo  
-> 🚧: Describe the business logic for **at least one business service** in detail. If available, show the expected path and HTPP method. The remaining documentation of APIs shall be made available in the swagger endpoint. The default Swagger UI page is available at /swagger-ui.html.
+Based on the [UC09] Flight Search, the app will offer the option to search flights based on date, departure airport and arrival airport.
 
-Based on the UC-4, there will be two offers and a standard offer. Given a location, a message is shown accordingly:
+**Path**: [`/flights/search?departureAirportIataCode=&arrivalAirportIataCode=&flightDate`] 
 
-- If the location is "Basel", the message is "10% off on all large pizzas!!!"
-- If the location is "Brugg", the message is "two for the price of One on all small pizzas!!!"
-- Otherwise, the message is "No special offer".
-
-**Path**: [`/api/menu/?location="Basel"`] 
-
-**Param**: `value="location"` Admitted value: "Basel","Brugg".
+**Param**: `departureAirportIataCode` Admitted value: IATA code for the airport stored in the DB.
+**Param**: `arrivalAirportIataCode` Admitted value: IATA code for the airport stored in the DB.
+**Param**: `flightDate` Admitted value: date.
 
 **Method:** `GET`
 
 ## Implementation
 
-> 🚧: Todo  
-> 🚧: Briefly describe your technology stack, which apps were used and for what.
-
 ### Backend Technology
-
-> 🚧: Todo  
-> 🚧: It is suggested to clone this repository, but you are free to start from fresh with a Spring Initializr. If so, describe if there are any changes to the PizzaRP e.g., different dependencies, versions & etc... Please, also describe how your database is set up. If you want a persistent or in-memory H2 database check [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/resources/application.properties). If you have placeholder data to initialize at the app, you may use a variation of the method **initPlaceholderData()** available at [link](https://github.com/FHNW-INT/Pizzeria_Reference_Project/blob/main/pizza/src/main/java/ch/fhnw/pizza/PizzaApplication.java).
 
 This Web application is relying on [Spring Boot](https://projects.spring.io/spring-boot) and the following dependencies:
 
@@ -178,7 +155,6 @@ Then, the following further dependencies have been added to the project `pom.xml
 
 - SWAGGER:
 
-
   ```XML
    <dependency>
       <groupId>org.springdoc</groupId>
@@ -187,33 +163,30 @@ Then, the following further dependencies have been added to the project `pom.xml
    </dependency>
   ```
 
+- OTHER
+
+  ```XML
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+  </dependency>
+  <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.5.0</version>
+    </dependency>
+  <dependency>
+    <groupId>org.modelmapper</groupId>
+    <artifactId>modelmapper</artifactId>
+    <version>2.4.4</version>
+  </dependency>
+  ```
+
 ### Frontend Technology
 
-> 🚧: Todo  
-> 🚧: Describe your views and what APIs is used on which view. If you don't have access to the Internet Technology class Budibase environment (https://inttech.budibase.app/), please write to Devid on MS teams.
-
-This Web application was developed using Budibase and it is available for preview at https://inttech.budibase.app/app/pizzeria.
-
-## Execution
-
-> 🚧: Todo  
-> 🚧: Please describe how to execute your app and what configurations must be changed to run it. 
-
-The codespace URL of this Repo is subject to change. Therefore, the Budibase PizzaRP webapp is not going to show any data in the view, when the URL is not updated or the codespace is offline. Follow these steps to start the webservice and reconnect the webapp to the new webservice url.
-
-> 🚧: This is a shortened description for example purposes. A complete tutorial will be provided in a dedicated lecture.
-
-1. Clone PizzaRP in a new repository.
-2. Start your codespace (see video guide at: [link](https://www.youtube.com/watch?v=_W9B7qc9lVc&ab_channel=GitHub))
-3. Run the PizzaRP main available at PizzaApplication.java on your own codespace.
-4. Set your app with a public port, see the guide at [link](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
-5. Create an own Budibase app, you can export/import the existing Pizzeria app. Guide available at [link](https://docs.budibase.com/docs/export-and-import-apps).
-6. Update the pizzeria URL in the datasource and publish your app.
+This Web application was developed using Budibase and it is available for preview at https://flyaround.budibase.app/app/flyaound.
 
 ## Project Management
-
-> 🚧: Todo  
-> 🚧: Include all the participants and briefly describe each of their **individual** contribution and/or roles. Screenshots/descriptions of your Kanban board or similar project management tools are welcome.
 
 ### Roles
 
@@ -223,7 +196,6 @@ The codespace URL of this Repo is subject to change. Therefore, the Budibase Piz
 
 ### Milestones
 
-> 🚧: Todo: create a board on github
 
 1. **Analysis**: Scenario ideation, use case analysis and user story writing.
 2. **Prototype Design**: Creation of wireframe and prototype.

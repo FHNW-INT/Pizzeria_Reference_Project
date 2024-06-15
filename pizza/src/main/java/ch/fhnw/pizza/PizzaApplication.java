@@ -200,7 +200,7 @@ public class PizzaApplication {
 		// Create a booking
 		Booking booking = new Booking();
 		
-		booking.setCheckinDate(new Date());
+		booking.setCheckinDate(LocalDate.now());
 		bookingService.addBooking(booking, passenger2, flight.getId());
 
 	}

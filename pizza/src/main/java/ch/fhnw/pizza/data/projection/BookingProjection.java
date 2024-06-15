@@ -1,10 +1,12 @@
 package ch.fhnw.pizza.data.projection;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public interface BookingProjection {
     Long getId();
-    Date getCheckinDate();
+    LocalDate getCheckinDate();
+    LocalDate getBookingDate();
     PassengerProjection getPassenger();
     FlightProjection getFlight();
     String getUserEmail();
