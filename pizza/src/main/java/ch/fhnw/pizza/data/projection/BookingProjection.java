@@ -7,6 +7,7 @@ public interface BookingProjection {
     Date getCheckinDate();
     PassengerProjection getPassenger();
     FlightProjection getFlight();
+    String getUserEmail();
 
     
     interface PassengerProjection {

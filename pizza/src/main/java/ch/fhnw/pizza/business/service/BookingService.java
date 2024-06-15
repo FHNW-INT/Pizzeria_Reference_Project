@@ -26,14 +26,32 @@ public class BookingService {
     @Autowired
     private PassengerRepository passengerRepository;
 
+    
+    @Autowired
+    private FlightRepository flightRepository;
 
-    public Booking addBooking(Booking booking) throws Exception {
+    public BookingProjection addBooking(Booking booking, Passenger passenger, Long flightId) throws Exception {
         if (booking.getId() != null && bookingRepository.existsById(booking.getId())) {
             throw new Exception("Booking with id " + booking.getId() + " already exists");
         }
-        return bookingRepository.save(booking);
-    }
 
+        Flight flight = flightRepository.findById(flightId)
+            .orElseThrow(() -> new Exception("Flight with id " + flightId + " not found"));
+
+
+        //booking.setId(booking.getId());
+        booking.setCheckinDate(booking.getCheckinDate());
+        booking.setFlight(flight); // set the flight to the booking
+
+        if(passenger != null) {
+            Passenger storedPassenger = getPassengerByEmailOrAdd(passenger);
+            booking.setPassenger(storedPassenger); // set the passenger to the booking
+        }
+        
+
+        Booking savedBooking = bookingRepository.save(booking);
+        return getBookingById(savedBooking.getId());
+    }
 
     public Passenger addPassenger(Passenger passenger) throws Exception {
         if (passenger.getId() != null && passengerRepository.existsById(passenger.getId())) {
@@ -42,6 +60,31 @@ public class BookingService {
         return passengerRepository.save(passenger);
     }
 
+    public Passenger getPassengerByEmailOrAdd(Passenger passenger) throws Exception {
+        if (passenger.getEmail() == null ) {
+            throw new Exception("Passenger email required");
+        }
+
+        Passenger existingPassenger = passengerRepository.findByEmail(passenger.getEmail());
+        
+        if (existingPassenger != null) {
+            return existingPassenger;
+        }
+        
+        return addPassenger(passenger);
+    }
+    
+
+    public List<BookingProjection> getAllBookings() {
+        List<BookingProjection> bookingList = bookingRepository.findAllProjectedBy();
+        return bookingList;
+    }
+
+
+    public List<BookingProjection> getAllUserBookings(String userEmail) {
+        List<BookingProjection> bookingList = bookingRepository.findAllProjectedByUserEmail(userEmail);
+        return bookingList;
+    }
 
     public BookingProjection getBookingById(Long id) {
         try {

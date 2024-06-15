@@ -18,4 +18,5 @@ import ch.fhnw.pizza.data.projection.BookingProjection;
 public interface BookingRepository extends JpaRepository<Booking, Long> {
     Optional<BookingProjection> findProjectedById(Long id);
     List<BookingProjection> findAllProjectedBy();
+    List<BookingProjection> findAllProjectedByUserEmail(String userEmail);
 }

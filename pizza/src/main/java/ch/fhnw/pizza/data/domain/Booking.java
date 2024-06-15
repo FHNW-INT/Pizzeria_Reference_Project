@@ -28,6 +28,10 @@ public class Booking {
     @Column(name = "checkin_date")
     private Date checkinDate;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "booking_date")
+    private Date bookingDate;
+
     @ManyToOne
     @JoinColumn(name = "passenger_fk")
     private Passenger passenger;
@@ -37,6 +41,7 @@ public class Booking {
     @JoinColumn(name = "flight_fk")
     private Flight flight;
 
+    private String userEmail;
     
     public Long getId() {
         return id;
@@ -54,6 +59,14 @@ public class Booking {
         this.checkinDate = checkinDate;
     }
 
+    public Date getBookingDate() {
+        return checkinDate;
+    }
+
+    public void setBookingDate(Date checkinDate) {
+        this.checkinDate = checkinDate;
+    }
+
     public Passenger getPassenger() {
         return passenger;
     }
@@ -68,6 +81,14 @@ public class Booking {
 
     public void setFlight(Flight flight) {
         this.flight = flight;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
     
 }

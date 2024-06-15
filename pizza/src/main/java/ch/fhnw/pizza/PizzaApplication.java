@@ -148,7 +148,7 @@ public class PizzaApplication {
 		// LX1734 ZRH-FCO
 		flight = new Flight();
 		flight.setFlightDesignator("LX1734");
-		flight.setFlightDate(LocalDate.of(2024, 6, 5));
+		flight.setFlightDate(LocalDate.now().plusDays(2));
 		flight.setDepartureTime(LocalTime.of( 18, 00));
 		flight.setArrivalTime(LocalTime.of( 19, 30));
 		flight.setDepartureAirport(airportZrh);
@@ -158,7 +158,7 @@ public class PizzaApplication {
 		// LH401 ZRH-FRA
 		flight = new Flight();
 		flight.setFlightDesignator("LH401");
-		flight.setFlightDate(LocalDate.now().plusDays(1));
+		flight.setFlightDate(LocalDate.now().plusDays(2));
 		flight.setDepartureTime(LocalTime.of( 8, 30));
 		flight.setArrivalTime(LocalTime.of( 10, 00));
 		flight.setDepartureAirport(airportZrh);
@@ -168,7 +168,7 @@ public class PizzaApplication {
 		// BA711 ZRH-LHR
 		flight = new Flight();
 		flight.setFlightDesignator("BA711");
-		flight.setFlightDate(LocalDate.now().plusDays(1));
+		flight.setFlightDate(LocalDate.now().plusDays(2));
 		flight.setDepartureTime(LocalTime.of( 12, 30));
 		flight.setArrivalTime(LocalTime.of( 14, 00));
 		flight.setDepartureAirport(airportZrh);
@@ -199,10 +199,9 @@ public class PizzaApplication {
 
 		// Create a booking
 		Booking booking = new Booking();
-		booking.setFlight(flight);
-		booking.setPassenger(passenger1);
+		
 		booking.setCheckinDate(new Date());
-		bookingService.addBooking(booking);
+		bookingService.addBooking(booking, passenger2, flight.getId());
 
 	}
 

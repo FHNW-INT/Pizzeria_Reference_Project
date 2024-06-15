@@ -59,10 +59,6 @@ public class Flight {
     @OneToMany(mappedBy = "flight")
     private List<Booking> bookings;
 
-    @ManyToOne
-    @JoinColumn(name = "aircraft_fk")
-    private Aircraft aircraft;
-
     @Column(name = "price")
     private double price;
 

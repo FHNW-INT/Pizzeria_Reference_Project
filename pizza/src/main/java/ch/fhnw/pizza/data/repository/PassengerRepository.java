@@ -9,5 +9,6 @@ import ch.fhnw.pizza.data.domain.Passenger;
 @Repository
 //JpaRepository should be typed to the domain class and an ID type
 public interface PassengerRepository extends JpaRepository<Passenger, Long> {
-    Optional<Passenger> findById(Long id);
+    // Optional<Passenger> findById(Long id);
+    Passenger findByEmail(String email);
 }
